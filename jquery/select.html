@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>全选反选</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    </script>
+</head>
+
+<body>
+    <form>
+        <lable>爱好：</lable>
+        <input type="checkbox" />游泳
+        <input type="checkbox" />跑步
+        <input type="checkbox" />跳高
+        <input type="checkbox" />唱歌
+        <input type="checkbox" />羽毛球
+        <input type="checkbox" />篮球
+        <a href="#">全选</a>
+        <a href="#">全不选</a>
+        <a href="#">反选</a>
+    </form>
+    <script type="text/javascript">
+        $(function () {
+            var flag = false;
+            //全选与全不选
+            $("form a").eq(0).click(function () {
+                flag = !flag;
+                $("form input").prop("checked", true);
+            });
+            //全不选
+            $("form a").eq(1).click(function () {
+                $("form input").prop("checked", false);
+            });
+            //反选  				
+            $("form a:last").click(function () {
+                $("input:checkbox").each(function () {
+                    $(this).prop("checked", !$(this).prop("checked"));
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			.outer{
+				position: relative;
+				/*border: 1px solid red;*/
+				display: inline-block;
+				margin: 100px 300px;
+				width: 700px;
+			}
+			.outer div{
+				/*border: 1px solid black;*/
+				background-color: lightgrey;
+				color: dimgrey;
+				display: inline-block;
+				padding: 10px;
+				margin: 5px;
+				transition: all 0.5s;
+			}
+			.outer div:hover{
+				cursor: pointer;
+			}
+			.outer .grow:hover{
+				transform: scale(1.1);
+			}
+			.outer .shrink:hover{
+				transform: scale(0.9);
+				
+			}
+			
+			@keyframes move{
+				0%{transform: scale(1);}
+				25%{transform: scale(1.1);}
+				50%{transform: scale(1);}
+				75%{transform: scale(0.9);}
+				100%{transform: scale(1);}			
+			}
+			.outer .pulse:hover{
+				animation-iteration-count: infinite;
+				animation: move 0.9s;
+				-webkit-animation: move 0.9s linear;
+				-webkit-animation-iteration-count: infinite;
+			}
+			@keyframes pulse-grow-move{
+				0%{transform: scale(1);}
+				50%{transform: scale(1.1);}
+				100%{transform: scale(1);}
+			}
+			.outer .pulse-grow:hover{
+				animation: pulse-grow-move 0.5s linear;
+				-webkit-animation:  pulse-grow-move 0.7s linear;;
+				animation-iteration-count: infinite;
+				-webkit-animation-iteration-count: infinite;
+			}
+			@keyframes pulse-shrink-move{
+				0%{transform: scale(1);}
+				50%{transform: scale(0.9);}
+				100%{transform: scale(1);}
+			}
+			.outer .pulse-shrink:hover{
+				animation: pulse-shrink-move 0.5s linear;
+				-webkit-animation:  pulse-shrink-move 0.5s linear;;
+				animation-iteration-count: infinite;
+				-webkit-animation-iteration-count: infinite;
+			}
+			@keyframes push-move{
+				0%{transform: scale(1);}
+				50%{transform: scale(0.8);}
+				100%{transform: scale(1);}
+			}
+			.outer .push:hover{
+				animation: push-move 0.5s linear;
+				-webkit-animation: push-move 0.5s linear;
+			}
+			@keyframes pop-move{
+				0%{transform: scale(1);}
+				50%{transform: scale(1.1);}
+				100%{transform: scale(1);}
+			}
+			.outer .pop:hover{
+				animation: pop-move 0.5s linear;
+				-webkit-animation: pop-move 0.5s linear;
+			}
+			
+			@keyframes bounce-in-move{
+				0%{transform: scale(1);}
+				50%{transform: scale(1.1);}
+				100%{transform: scale(1);}
+			}
+			.outer .bounce-in:hover{
+				animation: bounce-in-move 0.3s linear;
+				-webkit-animation:  bounce-in-move 0.3s linear;;
+				animation-iteration-count: 2;
+				-webkit-animation-iteration-count: 2;
+			}
+
+			.outer .grow-rotate:hover{
+				transform: scale(1.1);
+				transform: skew(5deg,5deg);
+			}
+			.outer .float:hover{
+				transform: translate(0px,-5px);
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="outer">
+			<div class="grow">
+				Grow
+			</div>	
+			<div class="shrink">
+				Shrink
+			</div>
+			<div class="pulse">
+				Pulse
+			</div>
+			
+			<div class="pulse-grow">
+				Pulse Grow
+			</div>
+			<div class="pulse-shrink">
+				Pulse Shrink
+			</div>
+			
+			<div class="push">
+				Push
+			</div>
+			<div class="pop">
+				Pop
+			</div>
+			
+			<div class="bounce-in">
+				Bounce In
+			</div>
+			
+			<div class="grow-rotate">
+				Grow-rotate
+			</div>
+			
+			<div class="float">
+				Float
+			</div>
+			<div class="bob">
+				Bob
+			</div>
+			<style type="text/css">
+				@keyframes bob-move{
+				0%{transform: translate(0px,0px);}
+				50%{transform: translate(0px,-7px);}
+				75%{transform: translate(0px -3px);}
+				}
+				.outer .bob:hover{
+					animation: bob-move 1s ease-in-out;
+					-webkit-animation:  bob-move 1s ease-in-out;;
+					animation-iteration-count: infinite;
+					-webkit-animation-iteration-count: infinite;
+				}
+			</style>
+			<div class="wobble-horizontal">
+				Wobble Horizontal
+			</div>
+			<style type="text/css">
+				@keyframes wobble-horizontal-move{
+				0%{transform: translate(0px,0px);}
+				50%{transform: translate(6px,0px);}
+				75%{transform: translate(0px -3px);}
+				}
+				.outer .wobble-horizontal:hover{
+					animation: wobble-horizontal-move 0.8s ease-in-out;
+					-webkit-animation:  wobble-horizontal-move 0.8s ease-in-out;;
+					animation-iteration-count: infinite;
+					-webkit-animation-iteration-count: infinite;
+				}
+			</style>
+			
+			
+			
+			
+			
+			
+		</div>
+		
+	</body>
+</html>

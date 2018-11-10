@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <svg >
+        <rect x="10" y="10" width="20" height="100">
+            <animate attributeType="XML" attributeName="y" values="0;50;0" dur="1.3s" begin=".3" repeatCount="indefinite"/>
+        </rect>
+        <rect x="40" y="10" width="20" height="100">
+            <animate attributeType="XML" attributeName="y" values="0;50;0" dur="1s" begin=".3" repeatCount="indefinite"/>
+        </rect>
+        <rect x="70" y="10" width="20" height="100">
+            <animate attributeType="XML" attributeName="y" values="0;50;0" dur="1.5s" begin=".3" repeatCount="indefinite"/>
+        </rect>
+    </svg>
+    <hr />
+    <svg class="svg2" viewBox="0 0 300 120" width="300px" height="120px">
+    	<rect x="10" y="0" width="20px" height="100px">  		
+    		<animateTransform attributeType="xml" attributeName="transform" type="translate" values="0 -60;0 0;0 -60" dur="1s" repeatCount="indefinite"/>
+    	</rect>
+    	<rect x="50" y="0" width="20px" height="100px">  		
+    		<animateTransform attributeType="xml" attributeName="transform" type="translate" values="0 -60;0 0;0 -60" dur="1.1s" repeatCount="indefinite"/>
+    	</rect>
+    	<rect x="90" y="0" width="20px" height="100px">  		
+    		<animateTransform attributeType="xml" attributeName="transform" type="translate" values="0 -60;0 0;0 -60" dur="1.2s" repeatCount="indefinite"/>
+    	</rect>
+    	<rect x="130" y="0" width="20px" height="100px">  		
+    		<animateTransform attributeType="xml" attributeName="transform" type="translate" values="0 -60;0 0;0 -60" dur="1.3s" repeatCount="indefinite"/>
+    	</rect>
+    	<rect x="170" y="0" width="20px" height="100px">  		
+    		<animateTransform attributeType="xml" attributeName="transform" type="translate" values="0 -60;0 0;0 -60" dur="1.4s" repeatCount="indefinite"/>
+    	</rect>
+    	<rect x="210" y="0" width="20px" height="100px">  		
+    		<animateTransform attributeType="xml" attributeName="transform" type="translate" values="0 -60;0 0;0 -60" dur="1.5s" repeatCount="indefinite"/>
+    	</rect>
+    </svg>
+    <style type="text/css">
+    	*{
+    		margin: 0;
+    		padding: 0;
+    	}
+    	.svg2 rect{
+    		fill: orange;
+    	}
+    </style>
+    <hr />
+    <svg viewBox="0 0 200 200" width="200px" height="200px">
+    	<rect x="10" y="50" width="20" height="100">		
+    		<animate attributeType="xml" attributeName="height" values="50;100;50" begin="-0.3s" dur="0.6s" repeatCount="indefinite" />
+    		<animate attributeName="y" attributeType="XML" values="75; 50; 75" begin="-0.3s" dur="0.6s" repeatCount="indefinite"></animate>
+    	</rect>
+    	<rect x="40" y="50" width="20" height="100">		
+    		<animate attributeType="xml" attributeName="height" values="50;100;50" begin="-0.15s" dur="0.6s" repeatCount="indefinite" />
+    		<animate attributeName="y" attributeType="XML" values="75; 50; 75" begin="-0.15s" dur="0.6s" repeatCount="indefinite"></animate>
+    	</rect>
+    	<rect x="70" y="50" width="20" height="100">		
+    		<animate attributeType="xml" attributeName="height" values="50;100;50" begin="0s" dur="0.6s" repeatCount="indefinite" />
+    		<animate attributeName="y" attributeType="XML" values="75; 50; 75" begin="0s" dur="0.6s" repeatCount="indefinite"></animate>
+    	</rect>
+    </svg>
+</body>
+</html>

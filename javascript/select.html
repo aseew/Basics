@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>全选反选</title>
+</head>
+<body>
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <br>
+    <input type="button" value='全选' id='all'>
+    <input type="button" value='取消' id='noOne'>
+    <input type="button" value='反选' id='opposite'>
+    <script>
+        var inps = document.getElementsByTagName('input')
+        var all = document.getElementById('all')
+        var noOne = document.getElementById('noOne')
+        var opposite = document.getElementById('opposite')
+        all.onclick = function () {
+            f1(true);
+        }
+        noOne.onclick = function () {
+            f1(false);
+        }
+        opposite.onclick = function () {
+            for (var i = 0; i < inps.length; i++) {
+                if (inps[i].type == 'checkbox') {
+                    inps[i].checked = !inps[i].checked
+                }
+            }
+        }
+        function f1(flag) {
+            //        循环遍历数组
+            for (var i = 0; i < inps.length; i++) {
+                //            如果是多选框
+                if (inps[i].type == 'checkbox') {
+                    //                就让它的选中状态为flag
+                    inps[i].checked = flag
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

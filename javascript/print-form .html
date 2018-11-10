@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>打印乘法表</title>
+</head>
+
+<body>
+    <script>
+        document.write('<table border="0">')
+        for (var j = 1; j <= 10; j++) {
+            var num1 = parseInt(Math.random() * 256)
+            var num2 = parseInt(Math.random() * 256)
+            var num3 = parseInt(Math.random() * 256)
+            document.write('<tr style="background-color:rgb(' + num1 + ',' + num2 + ',' + num3 + ')">')
+            for (var i = 1; i <= j; i++) {
+                document.write('<td>' + j + '*' + i + '=' + j*i)
+            }
+            document.write('</tr>')
+        }
+        document.write('</table>')
+
+    //    rgb(a,b,c)
+    //    0-255
+    </script>
+
+</body>
+
+</html>

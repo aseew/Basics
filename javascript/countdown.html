@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>考六级倒计时</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .count {
+            /* height: 300px;
+            width: 500px; */
+            display: inline-block;
+            background: rgb(241, 204, 209);
+
+        }
+
+        .count>div {
+            display: inline-block;
+            /* margin-top: -10px; */
+            /* border: 1px solid black; */
+        }
+
+        .count h1 {
+            display: inline-block;
+            color: orangered;
+        }
+
+        .count span {
+            display: inline-block;
+            height: 40px;
+            font-size: 26px;
+            /* background: rgb(196, 28, 28); */
+            width: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="count">
+        <div>
+            <h1>六级考试仅剩</h1>
+            <span>0</span>
+            <span>0</span>
+            <span>2</span>
+            <h1>天</h1>
+            <span>0</span>
+            <span>2</span>
+            <h1>时</h1>
+            <span>0</span>
+            <span>2</span>
+            <h1>分</h1>
+            <span>0</span>
+            <span>2</span>
+            <h1>秒</h1>
+        </div>
+    </div>
+    <script>
+        var spans = document.getElementsByTagName("span");
+        var timeId = setInterval(function () {
+            var date = new Date();
+            //获得当前时间
+            var nowTime = date.valueOf();
+            //六级考试的时间为2018年12月15日，分别设置这些时间
+            var endYear = date.setFullYear(2018);
+            var endMonth = date.setMonth(11);
+            var endDay = date.setDate(15);
+            var endHour = date.setHours(9);
+            var endMinute = date.setMinutes(0);
+            var endSec = date.setSeconds(0);
+            //获得修改后的时间
+            var endTime = date.setTime(date)
+            //获得两个不同时间的时间差
+            var timeDiff = endTime - nowTime;
+            //获取天数
+            var days = timeDiff / 1000 / 60 / 60 / 24;
+            spans[0].innerText = parseInt(days / 100);
+            spans[1].innerText = parseInt(days / 10 % 10);
+            spans[2].innerText = parseInt(days % 10);
+            //获取小时数
+            var hours = parseInt(timeDiff % (24 * 60 * 60 * 1000) / (60 * 60 * 1000));
+            spans[3].innerText = parseInt(hours / 10);
+            spans[4].innerText = parseInt(hours % 10);
+            //获取分钟数
+            var minuts = parseInt(timeDiff % (60 * 60 * 1000) / (60 * 1000));
+            spans[5].innerText = parseInt(minuts / 10);
+            spans[6].innerText = parseInt(minuts % 10);
+            //获取秒数
+            var seconds = parseInt(timeDiff % (60 * 1000) / 1000)
+            spans[7].innerText = parseInt(seconds / 10);
+            spans[8].innerText = parseInt(seconds % 10);
+            //判断时间是否没有了
+            if (timeDiff === 0) {
+                clearInterval(timeId);
+            }
+        }, 1)
+    </script>
+
+
+
+
+</body>
+
+</html>

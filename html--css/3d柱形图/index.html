@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="stage">
+        <!-- <div class="rotate"> -->
+        <div class="listdiv">
+            <div class="img"></div>
+            <div class="text">
+                <h1>START</h1>
+                <h3>THE FIRST DAY</h3>
+            </div>
+            <div class="lis">
+                <li>
+                    <span class="bar1">100,000</span>
+                </li>
+                <li>
+                    <span class="bar2">300,000</span>
+                </li>
+                <li>
+                    <span class="bar3">200,000</span>
+                </li>
+                <li>
+                    <span class="bar4">400,000</span>
+                </li>
+                <li>
+                    <span class="bar5">300,000</span>
+                </li>
+                <li>
+                    <span class="bar6">200,000</span>
+                </li>
+                <li>
+                    <span class="bar7">100,000</span>
+                </li>
+            </div>
+        </div>
+        <!-- </div> -->
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $(".listdiv").click(function (e) {
+                $(this).toggleClass('active');
+                e.preventDefault();
+            })
+        })
+    </script>
+</body>
+
+</html>

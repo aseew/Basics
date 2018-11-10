@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点名</title>
+    <style>
+        body{
+            text-align: center;
+            background: rgb(233, 225, 225);
+        }
+        *{
+            margin: 0;}
+        ul{
+            width: 700px;
+            border: 5px solid #ccc;
+            padding: 25px;
+            margin: 100px auto 0px auto;
+            background: #ccc;
+            text-align: center;
+            box-shadow: 2px 5px 5px 5px gray;
+        }
+        li{
+            list-style: none;
+            display: inline-block;
+            margin: 10px;
+            background: skyblue;
+            border-radius: 10px;
+            box-shadow: 1px 1px 1px black;
+            color: white;
+            padding: 10px;
+        }
+        input{
+            height: 50px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+<ul id="box">
+</ul>
+<input type="button" value='开始点名'>
+<input type="button" value='点名结束'>
+<script>
+
+    var nameArr = ['多少','仨啊','萨瓦','权威性','榨汁机','动手','书店','农夫',
+    '时代','小球','微微','小红','被个','西门吹雪','消费税','萨维斯','优惠券','佩奇',
+    '哈哈哈','菠萝蜜','小球','八戒','小红','发货','百度','浮动','小球','西门吹雪','消费税','萨维斯','优惠券','佩奇',
+    '哈哈哈','菠萝蜜','小球','八戒','小红','发货','西门吹雪','消费税','萨维斯','优惠券','佩奇',
+    '哈哈哈','菠萝蜜','小球','八戒','小红','发货']
+
+    //    获得元素
+    var box = document.getElementById('box')
+    var btns = document.getElementsByTagName('input')
+
+    //    根据数组生成元素
+
+
+    //        生成元素 追加进父元素中
+    for(var i =0;i<nameArr.length;i++){
+        var newLi = document.createElement('li')
+        newLi.innerHTML = nameArr[i]
+
+        box.appendChild(newLi)
+
+    }
+
+
+    var lis = document.getElementsByTagName('li')
+    console.log(lis)
+
+    var timeId;
+
+    btns[0].onclick = function () {
+        timeId = setInterval(function () {
+//          清除所有元素的样式
+            for(var i = 0;i<lis.length;i++){
+                lis[i].style.background = 'skyblue'
+            }
+//        产生随机数
+//    取到最后一个数组项的索引 var a = Math.random()*((nameArr.length-1)+1)
+            var index = parseInt(Math.random()*nameArr.length)
+            lis[index].style.background = 'red'
+        },200)
+
+    }
+
+    btns[1].onclick = function () {
+        clearInterval(timeId)
+    }
+
+</script>
+</body>
+</html>

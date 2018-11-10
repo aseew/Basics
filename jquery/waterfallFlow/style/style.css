@@ -1,0 +1,38 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#container{
+	width: 1200px;
+	margin: 0px auto;
+	
+	/*background-color: #EDEDED;*/
+}
+#container > #items{
+	position: relative;
+}
+#container > #items > .item{
+	position: absolute;
+	width: 230px;
+	border: 1px solid #ddd;
+	box-shadow:0px 0px 2px 2px #ccc;
+}
+#container > #items img{
+	width: 100%;
+	
+	
+}
+#container > #items > .item > p{
+	padding: 10px;	
+}
+#loadMore{
+	display: block;
+	width: 300px;
+	line-height: 50px;
+	text-align: center;
+	border-radius: 10px;
+	text-decoration: none;
+	margin: 20px auto ;
+	
+	background-color: #B2DFEE;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="lib/css/bootstrap.css"/>
+		<style type="text/css">
+			
+			.affix{
+				top: 100px;
+			}
+			.fixbar{
+				width: 255px;
+			}
+			.affix-top{
+				position: fixed;
+				top:226px;
+			}
+			.navbar-inverse > .active > a{
+				color: #555;
+				background-color: #e7e7e7;
+			}
+		</style>
+	</head>
+	<body data-spy="scroll" data-target="#affixscrollbar">
+		<div class="jumbotron">
+				头文件<br />
+				头文件<br /><br /><br />
+				头文件 <br />
+		</div>
+		<div class="container">
+			<div class="row">
+				
+			
+			<div class="col-sm-3" id="affixscrollbar">
+				<ul class="nav navbar-inverse fixbar" data-spy="affix" data-offset-top="50" data-offset-bottom="50">
+					<li class="active"><a href="#one">1111</a></li>
+					<li><a href="#two">222</a></li>
+					<li><a href="#three">3333</a></li>
+					<li><a href="#four">4444</a></li>
+					<li><a href="#five">5555</a></li>
+					<li><a href="#six">666</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-9">
+					<div id="one" class="jumbotron" >111 <br /><br /><br /><br /><br /><br /><br />
+						<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+						<br /><br /><br /></div>
+					<div id="two" class="jumbotron">222<br /><br /><br /><br /><br /><br /><br /><br />
+						<br /><br /><br /><br /><br /><br />
+						<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+						<br /><br /><br /><br /><br /><br /><br />222</div>
+					<div id="three" class="jumbotron">333<br /><br /><br /><br /><br />
+						<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+						<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+						<br /><br /><br /><br /><br /><br />333</div>
+					<div id="four" class="jumbotron">444<br /><br /><br /><br /><br />
+						<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+						<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+						<br /><br /><br /><br /><br /><br />444</div>
+					<div id="five" class="jumbotron">555<br /><br /><br /><br /><br />
+						<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+						<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+						<br /><br /><br /><br /><br /><br />555</div>
+					<div id="six" class="jumbotron">666<br /><br /><br /><br /><br />
+						<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+						<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+						<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+						<br /><br /><br /><br /><br /><br />666</div>
+			</div>
+			</div>
+			
+		</div>
+		<script type="text/javascript" src="lib/js/jquery-3.3.1.js"></script>
+		<script type="text/javascript" src="lib/js/bootstrap.js"></script>
+	</body>
+</html>

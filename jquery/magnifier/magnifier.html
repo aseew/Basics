@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>			
+		</script>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			.sideBox{
+				width: 1200px;
+				height: 600px;
+				margin: 100px 100px;
+			}
+			.small{
+				width: 300px;
+				height: 400px;
+				position: relative;
+				border: 1px solid black;
+				float: left;
+			}
+			.small div{
+				width: 100px;
+				height: 100px;
+				background-color: rgba(88,250,255,0.45);
+				position: absolute;
+				cursor: move;
+				left: 0px;
+				top: 0px;
+				display: none;
+			}
+			.big{
+				width: 450px;
+				height: 540px;
+				border: 1px solid black;
+				position: relative;
+				float: left;
+				overflow: hidden;
+				display: none;
+			}
+			.big img{
+				display: block;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="sideBox">
+			<div class="small">
+				<img src="img/small.jpg" width="300px" height="400px"/>
+				<div class="pop"></div>
+			</div>
+			<div class="big">
+				<img src="img/big.jpg"/ width="1200px" height="1710px">
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				//获取滑块pop最大能移动的值
+				var maxLeft,maxTop;
+				//鼠标移入小盒子时
+				$(".small").mouseover(function(){
+					$(".pop").show();
+					$(".big").show();
+					maxLeft = $(this).width() - $(".pop").width();
+					maxTop = $(this).height() - $(".pop").height();
+ 					//console.log(maxLeft)
+				});
+				$(document).mousemove(function(e){
+					//计算滑块pop最大能到达的left与top值
+					var popLeft = e.pageX - $(".small").offset().left - $(".pop").width()/2; 
+					var popTop = e.pageY - $(".small").offset().top - $(".pop").height()/2; 
+					//console.log(popLeft)
+					//限制滑块能到达的左边与上边
+					popLeft = popLeft <= 0 ? 0 : popLeft;
+					popTop = popTop <= 0 ? 0 : popTop;
+					//限制右边与下边
+					popLeft = popLeft >= maxLeft ? maxLeft : popLeft;
+					popTop = popTop >= maxTop ? maxTop : popTop;
+					//将右边大盒子与划块地变化关联
+					var bigLeft = -popLeft / maxLeft * 750;
+					var bigTop = -popTop / maxTop * 1150;					
+					//鼠标移动时，给滑块pop赋左边与上边值
+					$(".pop").css({
+						left:popLeft,
+						top:popTop
+					});
+					//pop的位置发生变化时，大盒子中图片对应的地方发生变化
+					$(".big img").css({
+						left:bigLeft,
+						top:bigTop
+					});
+				});
+				//鼠标移出时，滑块与大盒子消失
+				$(".small").mouseleave(function(){
+					$(".pop").hide();
+					$(".big").hide();
+				});
+			});
+		</script>
+	</body>
+</html>

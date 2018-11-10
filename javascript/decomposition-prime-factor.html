@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>分解质因数</title>
+</head>
+
+<body>
+    输入一个整数：
+    <input type="text" id="numb" />
+    <input type="button" id="btn" value="提交" />
+</body>
+<script type="text/javascript">
+    btn.onclick = function () {
+        var num = Number(numb.value)
+        var mul, all;
+        if (num == numb.value) {
+            document.write("这个数的分解质因数：" + num + "=")
+            for (var i = 2; i <= num; i++) {
+
+                if (num % i == 0) {
+                    document.write(i);
+                    mul = i;
+                    num /= i;
+                    i--;
+                    document.write("*");
+                }
+            }
+        }
+        else {
+            alert("除了整数，其他输入无效！")
+        }
+    }
+</script>
+
+</html>

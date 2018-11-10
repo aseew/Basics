@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>判断闰年</title>
+</head>
+
+<body>
+    <!--输入年份和月份-->
+    <!--是否是闰年-->
+    <!--普通年能被4整除且不能被100整除的为闰年。（如2004年就是闰年,1900年不是闰年）；-->
+    <!--世纪年能被400整除的是闰年。(如2000年是闰年，1900年不是闰年)；-->
+    请输入年份：
+    <br>
+    <input type='number' id='year'>年
+    <input type='button' id='btn' value='确认'>
+    <script>
+        var year = document.getElementById('year')
+        var btn = document.getElementById('btn')
+        btn.onclick = function () {
+            //        获得输入框的值
+            var a1 = Number(year.value)
+            if (a1 % 4 == 0 && a1 % 100 != 0 || a1 % 400 == 0) {
+                alert('闰年')
+            } else {
+                alert('平年')
+            }   
+        }
+
+    </script>
+</body>
+
+</html>

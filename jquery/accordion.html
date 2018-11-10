@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>手风琴</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+    </script>
+    <style type="text/css">
+        ul {
+            list-style: none;
+            width: 100px;
+            border: 1px solid #ccc;
+            padding: 0px;
+            text-align: center;
+        }
+
+        ul.box>li>a {
+            display: block;
+            background: #ccc;
+        }
+
+        ul.box>li>ul {
+            display: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="box">
+        <li>
+            <a href="#">用户信息</a>
+            <ul>
+                <li>
+                    <a href="#">个人头像</a>
+                </li>
+                <li>
+                    <a href="#">修改账号</a>
+                </li>
+                <li>
+                    <a href="#">联系方式</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">用户钱包</a>
+            <ul>
+                <li>
+                    <a href="#">消费记录</a>
+                </li>
+                <li>
+                    <a href="#">个人账单</a>
+                </li>
+                <li>
+                    <a href="#">关联卡号</a>
+                </li>
+                <li>
+                    <a href="#">余额</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">用户好友</a>
+            <ul>
+                <li>
+                    <a href="#">添加好友</a>
+                </li>
+                <li>
+                    <a href="#">好友列表</a>
+                </li>
+                <li>
+                    <a href="#">好友信息</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <script type="text/javascript">
+        $(function () {
+            $(".box>li>a").click(function () {
+                //					写法一
+                //					$(this).parent().siblings().children("ul").show();
+                //					$(".box li ul").toggle();
+
+
+
+
+                //					方法二
+                //					$(this).siblings().toggle().parent().siblings().children("ul").css("display","none");
+                //					方法三
+                $(this).siblings().toggle().parent().siblings().children("ul").hide();
+
+            });
+        });
+    </script>
+</body>
+
+</html>

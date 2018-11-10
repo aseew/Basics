@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>导航栏固定不变jq</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .head-nav {
+            height: 20%;
+            width: 80%;
+            background: black;
+            z-index: 100;
+            border: 1PX solid black;
+            position: fixed;
+            top: 0;
+            left: 10%;
+        }
+
+        .left-nav {
+            height: 80%;
+            width: 20%;
+            background: #eee;
+            position: fixed;
+            top: 20%;
+            left: 10%;
+            list-style: none;
+            text-align: center;
+        }
+
+        .right-nav {
+            height: 80%;
+            width: 60%;
+            /* background: blue; */
+            position: relative;
+            left: 30%;
+            top: 20%;
+        }
+
+        .right-nav div {
+            height: 100%;
+            width: 100%;
+            border: 1px solid black;
+            background: yellow;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head-nav"></div>
+    <div class="left-nav"></div>
+    <div class="right-nav">
+        <div>1111111</div>
+        <div>2222222</div>
+        <div>3333333</div>
+        <div>4444444</div>
+        <div>5555555</div>
+        <div>6666666</div>
+        <div>7777777</div>
+
+    </div>
+    <script>
+        $(function () {
+            $(window).scrollTop(0);
+            for (var i = 1; i <= 6; i++) {
+                $('.left-nav').append('<li>菜单栏' + i + '</li>').children('li:odd').css('background', '#ddd');
+            }
+            var lis = $('.left-nav').children('li').length;
+            var h = $('.left-nav').height() / lis;
+            var w = $('.left-nav').width();
+            $('.left-nav').children('li').css({
+                height: h,
+                width: w,
+                lineHeight: 5
+            }).eq(0).css('background', '#bbb')
+            //获取滑动条的高度
+            $(document).scroll(function () { //页面加载时，获取滚动条初始高度
+                var scrollH = $(document).scrollTop(); //获取滚动条初始高度的值 ：0
+                //获取right-bar 里面的div的高度
+                var rightNavBoxH = $('.right-nav').find('div:first').outerHeight(true);
+                for (var i = 0; i < $('li').length; i++) {
+                    if (scrollH >= rightNavBoxH * i && scrollH <= rightNavBoxH * (1 + i)) {
+                        $('.left-nav li:odd').css('background', '#ddd');
+                        $('.left-nav li:even').css('background', '#eee');
+                        $('.left-nav li').eq(i).css('background', '#bbb');
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

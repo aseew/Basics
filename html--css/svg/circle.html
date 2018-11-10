@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<svg viewBox="0 0 200 200" width="200" heighe="200">
+			<circle cx="100" cy="100" r="50" style="fill:none;opacity: 0.2;" stroke="lightgray" stroke-width="10"></circle>
+			<circle cx="100" cy="100" r="50" fill="none" stroke-width="10" stroke="green" stroke-dasharray="314"></circle>
+			<text style="fill:black;font-size:16px" x="65" y="105">loding......</text>			
+		</svg>
+		<style type="text/css">
+			svg circle:nth-of-type(2){
+			transform-origin: 50% 50% 0;
+			stroke-linecap: round;	
+			transform: rotate(-90deg);				
+			animation: rotate 1s forwards;
+			}
+			@keyframes rotate{
+				from{stroke-dashoffset:314;}
+				to{stroke-dashoffset:34 ;}
+			}
+		</style>
+	</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>选择框内容左右移动</title>
+    <style>
+        select {
+            height: 160px;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <select name="" id="se1" multiple>
+        <option value="">111</option>
+        <option value="">222</option>
+        <option value="">333</option>
+        <option value="">444</option>
+        <option value="">555</option>
+        <option value="">666</option>
+        <option value="">777</option>
+        <option value="">888</option>
+        <option value="">999</option>
+        <option value="">000</option>
+    </select>
+    <input type="button" value='->>'>
+    <input type="button" value='<<-'>
+    <input type="button" value='->'>
+    <input type="button" value='<-'>
+    <select name="" id="se2" style='vertical-align: bottom' multiple></select>
+    <script>
+        var se1 = document.getElementById('se1')
+        var se2 = document.getElementById('se2')
+        var btns = document.getElementsByTagName('input')
+        //   点击按钮 将左边的选项全部搬运到右边去
+        //    给按钮注册点击事件  
+        btns[0].onclick = function () {
+            f1(se1, se2);
+        }
+        btns[1].onclick = function () {
+            f1(se2, se1);
+        }
+        btns[2].onclick = function () {
+            f2(se1, se2);
+        }
+        btns[3].onclick = function () {
+            f2(se2, se1);
+        }
+        function f2(start, end) {
+            var ops = start.children;
+            for (var i = 0; i < ops.length; i++) {
+                if (ops[i].selected == true) {
+                    end.appendChild(ops[i]);
+                    i--;
+                }
+            }
+        }
+        function f1(start, end) {
+            var ops = start.children;
+            for (var i = 0; i < ops.length; i++) {
+                end.appendChild(ops[i]);
+                i--;
+            }
+        }
+    </script>
+</body>
+
+</html>

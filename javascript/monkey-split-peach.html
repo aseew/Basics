@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>猴子分桃</title>
+</head>
+
+<body>
+</body>
+<script type="text/javascript">
+    /* 【思路】要求海滩上最少的桃子总数，那么保证分了5次，而且最后一次
+        * 要保证至少每只猴子分到一个桃子🍑还多一个，也就是说最少要有6个🍑
+        * 但是其实6个桃子🍑根本是不可以的。11个🍑  16个🍑，所以继续尝试
+        * 从6---11----16----21 每次增加5个🍑的数字去继续尝试，直到满足
+        * 可以按照题意分5次为止
+     */
+
+
+    var peachNum = 6;//在最后一只猴子分的桃子数至少有6个
+    //这一层是提供可能的桃子数
+    while (1) {
+        var monkey = 0;//没有猴子进行分桃
+        var count = peachNum;
+
+        //这一个while是为了提供模拟分桃子   
+        while (1) {
+            //判断桃子数是否符合进行分桃的要求      
+            if (count % 5 == 1) {
+                count = (count - 1) / 5 * 4;
+                //进行一次monkey就加1
+                monkey++;
+            }
+            else {
+                break;
+            }
+        }
+        if (monkey == 5) {
+            break;
+        }
+        peachNum += 5;
+
+    }
+    document.write("桃子的数量是：" + peachNum + "个。")
+
+
+</script>
+
+</html>

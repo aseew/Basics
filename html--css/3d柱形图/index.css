@@ -1,0 +1,210 @@
+body {
+  margin: 150px auto;
+  background: linear-gradient(120deg, rgba(50, 150, 100, 0.4), rgba(86, 86, 99, 0.2));
+}
+.stage {
+  margin: 0px auto;
+  perspective: 1500px;
+  transform-style: preserve-3d;
+  width: 300px;
+  height: 450px;
+  position: relative;
+}
+.stage .listdiv {
+  width: 300px;
+  height: 450px;
+  background-color: gray;
+  text-align: center;
+  box-shadow: 5px 5px 25px 0px rgba(68, 78, 68, 0.5);
+  transform-style: preserve-3d;
+  font-size: 0px;
+  transition: all 1s;
+  position: relative;
+}
+.stage .listdiv .img {
+  width: 100%;
+  height: 100%;
+  background: url(img/600x600.jpg) no-repeat;
+  background-size: auto 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  transform: translateZ(2px);
+  transform-style: preserve-3d;
+  bottom: 0;
+}
+.stage .listdiv .text {
+  position: absolute;
+  width: 100%;
+  height: 25%;
+  transform-style: preserve-3d;
+  color: white;
+  text-align: center;
+  transform: translateZ(3px);
+  line-height: 20px;
+  top: 100px;
+  z-index: 3;
+  margin-bottom: 120px auto;
+}
+.stage .listdiv .text h1 {
+  font-weight: 100;
+  opacity: 1;
+  -webkit-transition: opacity 1s;
+  transition: transform 1s;
+  font-size: 30px;
+}
+.stage .listdiv .text h3 {
+  opacity: 1;
+  font-style: italic;
+  font-weight: 100;
+  font-size: 17px;
+  transition: transform 1s;
+}
+.stage .listdiv .lis {
+  position: absolute;
+  width: 100%;
+  height: 15%;
+  z-index: 3;
+  transform-style: preserve-3d;
+  text-align: center;
+  top: 220px;
+}
+.stage .listdiv .lis li {
+  list-style: none;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 10px 6px;
+  position: relative;
+}
+.stage .listdiv .lis li span {
+  width: 0px;
+  height: 20px;
+  background: white;
+  display: inline-block;
+  -webkit-transform-origin: 0 50% 0;
+  transform-origin: 0 100% 0;
+  transform-style: preserve-3d;
+  position: absolute;
+  transition: all 1s;
+  transform: rotate(-45deg) rotateY(-90deg);
+}
+.stage .listdiv .lis li span::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  font-size: 16px;
+  left: 0;
+  transform-origin: 0 50% 0;
+  transform: rotateY(90deg) translateZ(0px);
+  transition: all 1s;
+}
+.stage .listdiv .lis li span::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 20px;
+  background-color: yellow;
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  top: 0;
+  transform-origin: 50% 100% 0;
+  transform: rotateX(90deg);
+}
+.stage .listdiv .lis::after {
+  content: 'COME ON';
+  width: 100%;
+  position: absolute;
+  z-index: 3;
+  font-size: 30px;
+  color: white;
+  display: block;
+  font-weight: 100;
+  transform: translateZ(5px);
+  transition: transform 1s;
+  margin: 40px auto;
+}
+.stage .listdiv.active {
+  transform: rotateX(45deg);
+}
+.stage .listdiv.active h1,
+.stage .listdiv.active h3 {
+  transform: translateZ(40px) translateY(-60px);
+  animation: h1h3 1s ease-in-out;
+}
+@keyframes h1h3 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.stage .listdiv.active .lis::after {
+  transform: translateZ(5px) translateY(-10px);
+}
+.stage .listdiv.active span {
+  font-size: 16px;
+  text-align: right;
+}
+.stage .listdiv.active span.bar1 {
+  width: 100px;
+}
+.stage .listdiv.active span.bar2 {
+  width: 300px;
+}
+.stage .listdiv.active span.bar3 {
+  width: 200px;
+}
+.stage .listdiv.active span.bar4 {
+  width: 400px;
+}
+.stage .listdiv.active span.bar5 {
+  width: 300px;
+}
+.stage .listdiv.active span.bar6 {
+  width: 200px;
+}
+.stage .listdiv.active span.bar7 {
+  width: 100px;
+}
+.stage .listdiv.active span.bar1::before {
+  content: 'B';
+  transform: rotateY(90deg) translateZ(100px);
+}
+.stage .listdiv.active span.bar2::before {
+  content: 'E';
+  transform: rotateY(90deg) translateZ(300px);
+}
+.stage .listdiv.active span.bar3::before {
+  content: 'L';
+  transform: rotateY(90deg) translateZ(200px);
+}
+.stage .listdiv.active span.bar4::before {
+  content: 'I';
+  transform: rotateY(90deg) translateZ(400px);
+}
+.stage .listdiv.active span.bar5::before {
+  content: 'V';
+  transform: rotateY(90deg) translateZ(300px);
+}
+.stage .listdiv.active span.bar6::before {
+  content: 'E';
+  transform: rotateY(90deg) translateZ(200px);
+}
+.stage .listdiv.active span.bar7::before {
+  content: 'D';
+  transform: rotateY(90deg) translateZ(100px);
+}

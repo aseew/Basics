@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>判断一个月多少天</title>
+</head>
+
+<body>
+    <!--输入年份和月份 求该月有多少天-->
+    <!--是否是闰年-->
+    <!--普通年能被4整除且不能被100整除的为闰年。（如2004年就是闰年,1900年不是闰年）；-->
+    <!--世纪年能被400整除的是闰年。(如2000年是闰年，1900年不是闰年)；-->
+ 请输入年份和月份：<br>
+<input type='number' id='year'>年
+<input type='number' id='month'>月
+<input type='button' id='btn' value='确认'>
+<script>
+
+    var year = document.getElementById('year')
+    var month = document.getElementById('month')
+    var btn = document.getElementById('btn')
+
+    btn.onclick = function () {
+//        获得输入框的值
+        var a1 = Number(year.value)
+        var a2 = Number(month.value)
+        switch (a2){
+            case 2:
+                if(a1 % 4 ==0 && a1 % 100 !=0 || a1%400==0){
+                    alert('29天')
+                }else {
+                    alert('28天')
+                }
+                break;
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                alert('31天');
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                alert('30天');
+                break;
+            default:
+                alert('你说啥')
+        }
+
+
+    }
+
+</script>
+</body>
+
+</html>

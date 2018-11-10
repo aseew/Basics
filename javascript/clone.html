@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>克隆</title>
+    <style>
+        body {
+            margin: 0;
+            text-align: center;
+        }
+
+        #box {
+            width: 600px;
+            height: 300px;
+            position: relative;
+            margin: auto;
+            background: rgb(187, 243, 243);
+
+        }
+
+        .circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: pink;
+            text-align: center;
+            line-height: 50px;
+            /*border: 2px solid skyblue;*/
+            position: absolute;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id='box'>
+        <div class='circle' id='ball1'>天</div>
+    </div>
+    <input type="button" value='点击克隆20个'>
+    <script>
+
+        //    单击在上面 双击消失
+        //    onclick
+        //    ondblclick
+        var btn = document.getElementsByTagName('input')[0];
+        var ball = document.getElementById('ball1');
+        var box = document.getElementById('box');
+        var index = 0;
+        var arr = ['有', '天', '好', '冷', '啊,', '一', '还', '下', '雨','斯','发','就','和'];
+        btn.onclick = function () {
+            //        创建20个小球
+            for (var i = 0; i < arr.length; i++) {
+                var newCir = ball.cloneNode(true);
+                //        修改id
+                newCir.id = 'newCir' + i
+                //            给小球设置随机颜色
+                var a = parseInt(Math.random() * 256);
+                var b = parseInt(Math.random() * 256);
+                var c = parseInt(Math.random() * 256);
+                newCir.style.background = 'rgb(' + a + ',' + b + ',' + c + ')';
+                box.appendChild(newCir);
+                //            产生随机位置
+                var x = Math.random() * (600 - 50);
+                var y = Math.random() * (300 - 50);
+                newCir.style.left = x + 'px';
+                newCir.style.top = y + 'px';
+                newCir.innerHTML = arr[i];
+                //            双击小球消失
+                newCir.ondblclick = function () {
+                    this.parentNode.removeChild(this)
+                }
+                //            单击小球在上面
+                newCir.onclick = function () {
+                    this.style.zIndex = ++index;
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

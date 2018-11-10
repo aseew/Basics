@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选择框内容左右移</title>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+		select{
+			width: 100px;
+			font-size: 26px;
+		}
+		button{
+			width: 50px;
+			height: 30px;
+		}
+	</style>
+</head>
+<body>
+	<select multiple id="left">
+		<option>111</option>
+		<option>222</option>
+		<option>333</option>
+		<option>444</option>
+		<option>555</option>
+		<option>666</option>
+		<option>777</option>
+		<option>888</option>
+		<option>999</option>
+		<option>000</option>
+	</select>
+	<button>&gt;&gt;</button>
+	<button>&gt;</button>
+	<button>&lt;&lt;</button>
+	<button>&lt;</button>
+	<select multiple id="right">
+	
+	</select>
+	<script type="text/javascript">
+		$(function(){
+			//左双箭头
+			$("button:eq(0)").click(function(){	
+				var leftValue = $("#left option");
+					$("#right").append(leftValue)									
+			});
+			//右双箭头
+			$("button:eq(2)").click(function(){
+				var rightValue = $("#right option");		
+				$("#left").append(rightValue)										
+			});			
+			//左单箭头			
+			$("button:eq(1)").click(function(){					
+				var leftValue = $("#left option:selected");
+				$("#right").append(leftValue)				
+			});
+			//右单箭头
+			$("button:eq(3)").click(function(){	
+				var rightValue = $("#right option:selected");
+				$("#left").append(rightValue)
+			});
+		});
+	</script>
+</body>
+</html>

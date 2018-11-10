@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>统计字符串各类型个数</title>
+	</head>
+	<body>
+		请输入任意字符串：
+		<input type="text" id="inputArgument"/>
+		<button id="btn">传入</button>
+		<script type="text/javascript">
+			//获取输入的值
+			btn.onclick = function (){
+				var ele = inputArgument.value;
+				countNum(ele);
+			}
+			//统计个数
+			function countNum(ele){
+				var str = ele.split("")			
+				console.log(str)
+				inputArgument.value = " "
+				//分别将大写/小写/数字字符和其他字符都设置为0个
+				var uperCase = lowrCase = countNum = countOther = 0;	
+				//循环遍历数组的每一项
+				for(var i = 0;i < str.length; i ++){
+					if(str[i] >= "A" && str[i] <= "Z"){
+						uperCase++;
+					}else if(str[i] >= "a" && str[i] <= "z"){
+						lowrCase++;
+					}else if(str[i] >= "0" && str[i] <= "9"){
+						countNum++;
+					}else{
+						countOther++;
+					}									
+				}
+				document.write( "大写字母出现的次数：" + uperCase + "次。" + "<br/>")
+				document.write("小写字母出现的次数：" + lowrCase + "次。" + "<br/>")
+				document.write("数字出现的次数：" + countNum + "次。" + "<br/>")
+				document.write("其他字符出现的次数：" + countOther + "次。" + "<br/>")
+			}
+		</script>
+	</body>
+</html>

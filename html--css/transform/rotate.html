@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			.rotate{
+				display: inline-block;
+				
+				height: 100px;
+				width: 100px;
+				background: rgba(193,210,240,0.8);
+				margin: 50px 100px;
+				transition: all 1s;
+			}
+			.rotate:hover{
+				transform: rotate(45deg);
+			}
+			/*rotateX的翻转*/
+			.rotatexBox{
+				height: 100px;
+				width: 100px;
+				display: inline-block;
+				margin: 50px 0px;
+				border: 1px solid red;
+				perspective: 100;
+				-webkit-perspective: 100;
+				
+
+			}
+			.rotatex{
+
+				height: 100px;
+				width: 100px;
+				background:lightblue;
+				transition: all 1s;
+
+			}
+			.rotatex:hover{
+				transform: rotateX(45deg);
+			}
+			/*rotateY的翻转*/
+			.rotatey{
+				display: inline-block;
+				height: 100px;
+				width: 100px;
+				background: rgba(193,210,240,0.8);
+				margin: 50px 100px;
+				transition: all 1s;
+			}
+			.rotatey:hover{
+				transform: rotateY(45deg);
+			}
+			/*rotateZ的翻转*/
+			.rotatez{
+				display: inline-block;
+				height: 100px;
+				width: 100px;
+				background: rgba(193,210,240,0.8);
+				margin: 50px 0px;
+				transition: all 1s;
+			}
+			.rotatez:hover{
+				transform: rotateZ(45deg);
+			}
+			/*scale(3)*/
+			.scale{
+				display: inline-block;
+				height: 100px;
+				width: 100px;
+				background-color: rgba(193,210,240,0.8);
+				margin: 50px 100px;
+				transition: all 1s;
+			}
+			.scale:hover{
+				transform: scale(2);
+			}
+			.scalexBox{
+				display: inline-block;
+				height: 100px;
+				margin: 50px 0px;
+				border: 1px solid red;
+				width: 100px;
+				
+			}
+			.scalex{
+
+				height: 100px;
+				width: 100px;
+				background-color: rgba(193,210,240,0.8);
+				transition: all 1s; 
+			}
+			.scalex:hover{
+				transform: scaleX(2);
+				transform-origin: 100% 0 ;
+				transform-origin: 100% 0 ;
+			}
+			
+			
+			/*scale*/
+			.skew{
+				height: 100px;
+				width: 100px;
+				display: inline-block;
+				background-color: rgba(193,210,240,0.8);
+				margin: 50px 100px;
+				transition: all 1s; 
+			}
+			.skew:hover{
+				transform: skew(30deg,30deg);
+			}
+			.skewx{
+				height: 100px;
+				width: 100px;
+				margin: 50px 0px;
+				
+				display: inline-block;
+				background-color: rgba(193,210,240,0.8);
+				transition: all 1s; 
+			}
+			.skewx:hover{
+				transform: skewX(30deg);
+			}
+			
+			
+			/*translate*/
+			.outer{
+				height: 100px;
+				width: 100px;
+				background-color: lightgrey;
+				margin: 50px 100px;
+				display: inline-block;
+				border: 1px solid black;
+			}
+			.translate{
+				height: 100px;
+				width: 100px;
+				background-color: rgba(193,210,240,0.8);
+				transition: all 1s; 
+			}
+			.translate:hover{
+				transform: translate(50px,50px);
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		<div class="rotate">
+			rotate(45deg)
+		</div>
+		<div class="rotatexBox">
+			<div class="rotatex">
+				rotateX(45deg) <br />
+				perspective100
+			</div>
+		</div>
+		
+		<div class="rotatey">
+			rotateY(45deg)
+		</div>
+		<div class="rotatez">
+			rotateZ(45deg)
+		</div>
+		<!--scale-->
+		<div class="scale">
+			scale(2)
+		</div>
+		<div class="scalexBox">
+			<div class="scalex">
+				scaleX(2)
+			</div>
+		</div>
+		
+		<!--skew-->
+		<div class="skew">
+			skew(30deg 30deg)
+		</div>
+		<div class="skewx">
+			skewX(30deg)
+		</div>
+		<!--translate-->
+		<div class="outer">
+			<div class="translate">
+				translate(50px,50px)
+			</div>
+		</div>
+		
+	</body>
+</html>
