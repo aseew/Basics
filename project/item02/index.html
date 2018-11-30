@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>个人页面</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/swipebox.css">
+	<link href="css/animate.css" rel='stylesheet' type='text/css' />
+</head>
+	<body>
+		<div class="header" id="home">
+			<div class="container">
+				<div class="header-top"></div>
+				<div class="my_img"></div>
+				<div class="logo wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+					<a href="index.html">web前端</a>
+				</div>
+				<div class="header-bottom">
+					<div class="header-grids">
+						<div class="col-md-3 header-grid">
+							<div class="header-img1 wow bounceInLeft animated animations" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;" >
+								<h4>个人信息</h4>
+								
+							</div>
+						</div>
+						<div class="col-md-3 header-grid">
+							<div class="header-img2 wow fadeInDownBig animated animated animations" data-wow-delay="0.4s">
+								<h4>技能</h4>
+								
+							</div>
+						</div>
+
+						<div class="col-md-3 header-grid">
+							<div class="header-img3 wow fadeInUpBig animated animated animations" data-wow-delay="0.4s">
+								<h4>项目与练习</h4>
+															</div>
+						</div>
+						<div class="col-md-3 header-grid">
+							<div class="header-img4 wow bounceInRight animated animations" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+								<h4>练手 </h4>
+								
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>	
+			</div>
+		</div>
+		<div class="content">
+			<div class="about-section">
+				<div class="container">
+					<h3>基本信息</h3>
+					<div class="about-grids">
+						<div class="col-md-5 about-img wow bounceInRight animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+							<div class="normal_info">
+								<b>冯月兰</b><br>
+								<b>华南理工大学广州学院</b><br>
+								<b>计算机网络工程专业</b><br>
+							</div>
+						</div>
+						<div class="col-md-7 about-grid wow bounceInLeft animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+							<p>有趣的灵魂+有趣的思想+有趣的代码+......=有趣的人生。人生不止苟且，还有诗和代码。世界那么大，代码敲敲看？努力做精美的页面，愉悦别人，快乐自己。努力敲码中。。。。。。</p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+			<div class="service-section">
+				<div class="container">
+					<h3>技能</h3>
+					<div class="service-grids">
+						<div class="col-md-6 service-grid wow bounceInLeft animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+							<h4>》熟练运用html、css、JavaScript。</h4>
+							<h4>》熟练运用bootstrap、jQuery。</h4>
+							<h4>》懂得运用less、ajax。</h4>
+							<h4>》懂得使用vue。</h4>		
+						</div>
+
+						<div class="col-md-6 service-grid wow bounceInRight animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+							<h4>》了解微信小程序的开发。</h4>
+							<h4>》了解php，mongodb。</h4>
+							<h4>》了解HTML5、css3。</h4>
+							<h4>》了解nodejs。</h4>
+
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+			<div class="work-section wow bounceIn " data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+				<div class="container">
+					<h3>项目与练习</h3>
+				</div>
+			</div>
+		</div>
+
+		<script type="application/x-javascript">
+			addEventListener("load", function() { 
+				setTimeout(hideURLbar, 0); 
+			}, false);
+			function hideURLbar(){ 
+				window.scrollTo(0,1); 
+			} 
+		</script>
+		<script src="js/jquery-1.11.1.min.js"></script>		
+
+		<script type="text/javascript" src="js/move-top.js"></script>
+		<script type="text/javascript" src="js/easing.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+				});
+			});
+		</script>
+
+		<script src="js/jquery.swipebox.min.js"></script> 
+		<script type="text/javascript">
+			jQuery(function($) {
+				$(".swipebox").swipebox();
+			});
+		</script>
+
+		<script src="js/wow.min.js"></script>
+		<script>
+			new WOW().init();
+		</script>
+	</body>
+	</html> 
